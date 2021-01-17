@@ -5,7 +5,7 @@ class Hexagon
   {
     var options = {
 
-        isStatic:true,
+        isStatic:false,
         retitution:1,
         friction:1
     }

@@ -37,9 +37,7 @@ var rg
 var rg2
 var ground2
 
-var PLAY = 78
-var END = 90
-var gameState = PLAY
+var chain
 
 
 function preload()
@@ -114,6 +112,7 @@ createCanvas(1300,800)
     // top 
 
     block25 = new Block(725,95,30,40,"pink")
+    chain = new Slingshot(poly.body, {x:150,y:400})
     
 
     // the end of the blocks
@@ -130,7 +129,7 @@ createCanvas(1300,800)
 function draw()
 {
   imageMode(CENTER)
-  background("black")
+  background("white")
 
   
     block1.display()
@@ -159,7 +158,7 @@ function draw()
     block24.display()
     block25.display()
   
-
+  chain.display()
 
 
   poly.display()
@@ -177,7 +176,7 @@ function mouseDragged()
   console.log("mouse is dragging the poly")
   Matter.Body.setPosition(poly.body,{x:mouseX,y:mouseY})
 }
-function mouseRelleased()
+function mouseReleased()
 {
-  slingShot.fly()
+  chain.fly()
 }
